@@ -1,0 +1,270 @@
+
+* {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+}
+
+.background {
+    background: linear-gradient(140deg,#da0303, #e7e1e1);
+    height: 100%; 
+  
+  } 
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    color: black;
+}
+
+/* Set body font and background color */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    padding: 10px 0;
+}
+
+header h2 {
+    margin-left: 50px;
+}
+
+.links{
+
+    margin-right: 50px;
+}
+
+.links button {
+    margin-right: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Info section styles */
+#info {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#info h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#info p {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 35px;
+}
+
+.budget-mod-title {
+    padding: 10px 20px;
+    display: flex;
+    align-self: center;
+    text-align: center;
+}
+
+/* Budget model section styles */
+.budget-model {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.budget-model h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.budget-model p {
+    margin-bottom: 15px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/*image to the right of text */
+img {
+    float: right;
+    margin-left: 20px;
+}
+
+.text-container {
+    margin-right: 20px;
+}
+
+section {
+    margin-top: 0px;
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #595c59;
+}
+
+
+/* Form Styling */
+form {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"]
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="int"] {
+    outline-width: 5px;
+    outline-color: #595c59;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.form-box {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.section-links {
+    display: flexbox;
+    justify-content: center;
+    align-items: right;
+}
+
+.section-links p {
+    margin-top: 10px;
+}
+
+.section-links p a {
+    color: #333;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.submit-sec-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+/* Main Page */
+.budget-model {
+    background-color: rgb(0, 0, 0, 0.02);
+    display: flex;
+    padding: 10px;
+}
+
+.budget-model h3 {
+    width: 99%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+}
+
+.budget-model p {
+    display: flex;
+    text-align: center;
+    margin-top: 100px;
+    float: left;
+}
+
+.budget-model img {
+    padding: 10px;
+    height: 250px;
+}
+
+.mod_opt {
+    margin: 15px 10px;
+    display: flex;
+}
+
+.mod_opt label {
+    margin-left: 10px;
+}
+/* End Of Main Page */

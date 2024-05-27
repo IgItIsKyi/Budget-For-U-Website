@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="background">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+<header >
+    <h1>Welcome {User}!</h1>
+</header>
+
+<body>
+    <div id="main_page">
+        <h1 id="Welcome_Title">Today is </h1>
+
+        <!-- Bills Section -->
+        <div id="bills">
+            <div id="paycheck-input">
+                <h2>Input monthly pay</h2>
+                <input type="text" id="paycheck">
+            </div>
+            <h2>Your bills:</h2>
+            <ol id="displayed_bills"></ol>
+            <h2 id="bill_total">Bills Total: </h2>
+            <button onclick="addBill()">Add bill</button>
+            <button onclick="removeBill()">Remove Bill</button>
+        </div>
+        <!-- End of Bills Section -->
+
+        <div id="debt-payments">
+            <h1 id="debt-title">Pay off your debts!</h1>
+            <p>This section is coming soon... </p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+<!-- JavaScript Code below -->
+<script defer>
+    // Start of addDate function
+    function addDate() {
+        var time = new Date();
+        var day = time.toLocaleDateString();
+        console.log(day);
+        document.getElementById("Welcome_Title").innerHTML += day;
+    }
+    // End of addDate function
+
+    // Start of display_bills function
+    function display_bills() {
+
+        console.log("Running Display bills function.")
+        bill_names = ["rent and utils", "car insurance", "phone", "Amazon Prime", "Credit Cards", "Gas", "Groceries", "Personal Loan"];
+        bill_costs = [766.23, 445.00, 50.00, 15.00, 200.00, 150.00, 200, 147]
+
+        for (let index = 0; index < bill_names.length; index++) {
+
+            document.getElementById("displayed_bills").innerHTML += "<li>" + bill_names[index]+ ": "  + bill_costs[index] + "</li>";
+            
+        }
+        
+        TotalOfBills(bill_costs);
+
+        console.log("End of display bills function")
+    }
+    // End of display_bills function
+
+    // Start of totalOfBills function
+    function TotalOfBills(array) {
+        console.log("Running Total of Bills function")
+
+        var total = 0.00;
+
+        for (let i = 0; i < array.length; i++) {
+            total = total + array[i];
+        }
+        document.getElementById("bill_total").innerHTML += "$" + total;
+
+        console.log("End of Total bills function")
+    }
+    // End of totalOfBills function
+
+    // Start of AddBill function
+    function addBill(){
+        alert('Still working on "Add Bill" button')
+    }
+    // End of addBill function
+
+    // Start of removeBill function
+    function removeBill() {
+        alert('Still working on "Remove Bill" button')
+    }
+    // End of removeBill function
+    
+    //Start of SubBillsFromPay function
+    function SubBillsFromPay() {
+        check = document.getElementById("paycheck").value
+        
+    }
+    // End of SubBillsFromPay function
+
+//Call functions below on start of the page/ after HTML is loaded
+addDate();
+display_bills();
+
+</script>
+<script src="database.js" defer></script>
+<!--- End of JavaScript Code -->
+</body>
+</html>

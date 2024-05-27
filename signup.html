@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="background">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!---   Start of Sign In Form ----->
+    <section id="signup" class="form-box">
+        <form id="login_form" onsubmit="return false">
+            <div id="main-signup">
+                <h1><center>Sign up</center></h1>
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="uname"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="uname" name="uname"><br>
+                <label for="uname">Username:</label><br>
+                <input type="text" id="uname" name="uname"><br>
+                <label for="psw">Password:</label><br>
+                <input type="text" id="psw" name="psw"><br>
+                <label for="psw_confirm">Re-Enter Password:</label><br>
+                <input type="text" id="psw_confirm" name="psw_confirm"><br>
+                
+            <div class="section-links">
+                <div class="submit-sec-btn">
+                    <input type="submit" value="Submit" onclick="getModelOptionForm()">
+                </div>
+                <p><a href="login.html">   Already have an account? Log in here!   </a></p>
+            </div>
+        </div>
+
+            <!---  Start of Model Options Form-->
+            <div id="model_opts" hidden>
+                <h1>What budgeting model would you like to go by?</h1>
+
+                <section class="mod_opt">
+                    <input type="checkbox" id="mod_opt1" name="mod_opt1"><br>
+                    <label for="mod_opt1">50/30/20 Budget</label><br>
+                </section>
+
+                <section class="mod_opt">
+                    <input type="checkbox" id="mod_opt2" name="mod_opt2"><br>
+                    <label for="mod_opt2">Zero Based Budget</label><br>
+                </section>
+
+                <section class="mod_opt">
+                    <input type="checkbox" id="mod_opt3" name="mod_opt3"><br>
+                    <label for="mod_opt3">Pay You First Budget</label><br>
+                </section>
+
+                
+                <input type="submit" value="Submit" onclick="getNeededInfoForm()">
+            </div>
+        <!---  End of Model Options Form-->
+
+        <!---  Start of Needs Form-->
+            <div id="needs_info" hidden>
+            <div id="bill_lines">
+                <label for="bill">Bill 1:</label> 
+                <input type="text" id="billName" name="billName">
+                <label for="bill">Bill amount:</label> 
+                <input type="int" id="billAmount" name="billAmount">                
+            </div>
+            <div id="bill_btns">
+                <button onclick="addBillLine()">+</button>
+                <button><a href="homepage.html">Submit</a></button> 
+            </div>
+
+        </div>
+
+        </form>
+        
+    </section>
+    <!---   End of Sign In Form ----->
+
+    <!---   Start of Model Choice and Needs Form ---->
+    <!---   End of Model Choice and Needs Form ---->
+    <script>
+        var need_counter = 1;
+
+        //Shows the next section and hides the first section
+        function getModelOptionForm() {
+            document.getElementById("main-signup").setAttribute("hidden", "true");
+            document.getElementById("model_opts").removeAttribute("hidden"); 
+        }
+
+        //Shows the next section and hides the section before
+        function getNeededInfoForm() {
+            document.getElementById("model_opts").setAttribute("hidden", "true");
+            document.getElementById("needs_info").removeAttribute("hidden"); 
+        }
+
+        function addBillLine() {
+
+            need_counter++;
+            // Adds the bill line
+            document.getElementById("bill_lines").innerHTML += '<br><label for="bill' + need_counter + '">Bill ' + need_counter + ':</label><input type="text" id="bill' + need_counter + ' " <label for="bill">Bill amount:</label> <input type="int" id="billAmount" name="billAmount">';
+        }
+
+        //What to do after submit is clicked on last section of form
+        function finishedSetUp(){
+
+        }
+    </script>
+</body>
+</html>
