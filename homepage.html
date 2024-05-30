@@ -11,12 +11,13 @@
 
 </head>
 <header >
+    <h1 id="Welcome_Title">Today is </h1>
     <h1>Welcome {User}!</h1>
 </header>
 
 <body>
-    <div id="main_page">
-        <h1 id="Welcome_Title">Today is </h1>
+    <div class="main_page">
+        
 
         <!-- Bills Section -->
         <div id="bills">
@@ -32,19 +33,24 @@
         </div>
         <!-- End of Bills Section -->
 
+        <!-- Start of Pie Chart Section -->
+        <div id="chart">
+            <center>
+            <h2>Overview of Bills</h2>
+            <div style="height:40vh">
+                <canvas id="pie-chart"></canvas>
+            </div>
+            </center>
+        </div>
+        <!-- End of Pie Chart Section-->
+
+        <!-- Start of Debt Payments Section -->
         <div id="debt-payments">
             <h1 id="debt-title">Pay off your debts!</h1>
             <p>This section is coming soon... </p>
         </div>
-
+        <!-- Start of Debt Payments Section -->
     </div>
-
-
-
-
-
-
-
 
 
 <!-- JavaScript Code below -->
@@ -115,7 +121,31 @@
 addDate();
 display_bills();
 
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    new Chart(document.getElementById('pie-chart'), {
+      type: 'doughnut',
+      data: {
+        labels: ["Needs", "Wants", "Savings"],
+        datasets: [{
+          backgroundColor: ["#e63946", "#254BDD",
+            "#ffbe0b" ],
+          data: [1760.21, 500, 225],
+          
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Overview of Bills'
+        },
+        responsive: true,
+      }
+    });
+  </script>
+
 <script src="database.js" defer></script>
 <!--- End of JavaScript Code -->
 </body>
