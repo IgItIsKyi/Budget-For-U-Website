@@ -11,12 +11,16 @@
 
 </head>
 <header >
-    <h1 id="Welcome_Title">Today is </h1>
-    <h1>Welcome {User}!</h1>
+    
 </header>
 
-<body>
+<body class="dashboard">
     <div class="main_page">
+
+        <div class="heading">
+            <h1 id="Welcome_Title">Today is </h1>
+            <h1>Welcome Kyiem!</h1>
+        </div>
         
 
         <!-- Bills Section -->
@@ -29,6 +33,7 @@
             <ol id="displayed_bills"></ol>
             <h2 id="bill_total">Bills Total: </h2>
             <button onclick="addBill()">Add bill</button>
+            <button onclick="editBill()">Edit bill</button>
             <button onclick="removeBill()">Remove Bill</button>
         </div>
         <!-- End of Bills Section -->
@@ -37,7 +42,7 @@
         <div id="chart">
             <center>
             <h2>Overview of Bills</h2>
-            <div style="height:40vh">
+            <div style="max-height:40vh">
                 <canvas id="pie-chart"></canvas>
             </div>
             </center>
@@ -66,7 +71,7 @@
 
     // Start of display_bills function
     function display_bills() {
-
+        // Temp view for bills as of now
         console.log("Running Display bills function.")
         bill_names = ["rent and utils", "car insurance", "phone", "Amazon Prime", "Credit Cards", "Gas", "Groceries", "Personal Loan"];
         bill_costs = [766.23, 445.00, 50.00, 15.00, 200.00, 150.00, 200, 147]
@@ -101,6 +106,12 @@
     // Start of AddBill function
     function addBill(){
         alert('Still working on "Add Bill" button')
+    }
+    // End of addBill function
+
+    // Start of editBill function
+    function editBill(){
+        alert('Still working on "Edit Bill" button')
     }
     // End of addBill function
 

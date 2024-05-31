@@ -68,7 +68,7 @@
                 <input type="int" id="billAmount" name="billAmount">                
             </div>
             <div id="bill_btns">
-                <button onclick="addBillLine()">+</button>
+                <button id="add-bill">+</button>
                 <button><a href="homepage.html">Submit</a></button> 
             </div>
 
@@ -102,6 +102,8 @@
             // Adds the bill line
             document.getElementById("bill_lines").innerHTML += '<br><label for="bill' + need_counter + '">Bill ' + need_counter + ':</label><input type="text" id="bill' + need_counter + ' " <label for="bill">Bill amount:</label> <input type="int" id="billAmount" name="billAmount">';
         }
+
+        document.getElementById("add-bill").addEventListener("click", addBillLine);
 
         //What to do after submit is clicked on last section of form
         function finishedSetUp(){
