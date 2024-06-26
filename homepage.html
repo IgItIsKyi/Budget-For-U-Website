@@ -27,10 +27,21 @@
         <div id="bills">
             <div id="paycheck-input">
                 <h2>Input monthly pay</h2>
-                <input type="text" id="paycheck">
+                <input type="number" id="paycheck" pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
             </div>
             <h2>Your bills:</h2>
-            <ol id="displayed_bills"></ol>
+            <div class="bill-display">
+                <div class="needs">
+                    <h2>Needs</h2>
+                    <ol id="needed_bills"></ol>
+                </div>
+                <div class="wants">
+                    <h2>Wants</h2>
+                    <ol id="want_bills"></ol>
+                </div>
+            </div>
+
+            
             <h2 id="bill_total">Bills Total: </h2>
             <button onclick="addBill()">Add bill</button>
             <button onclick="editBill()">Edit bill</button>
@@ -73,14 +84,26 @@
     function display_bills() {
         // Temp view for bills as of now
         console.log("Running Display bills function.")
-        bill_names = ["rent and utils", "car insurance", "phone", "Amazon Prime", "Credit Cards", "Gas", "Groceries", "Personal Loan"];
-        bill_costs = [766.23, 445.00, 50.00, 15.00, 200.00, 150.00, 200, 147]
+        needed_bills = ["rent and utils", "car insurance", "phone", "Credit Cards", "Gas", "Groceries", "Personal Loan"];
+        needed_costs = [766.23, 445.00, 50.00, 200.00, 150.00, 200, 147]
 
-        for (let index = 0; index < bill_names.length; index++) {
+        want_bills = ["Amazon Prime", "Club4", "Crunch"];
+        want_costs = [15.00, 27.50, 10.00]
 
-            document.getElementById("displayed_bills").innerHTML += "<li>" + bill_names[index]+ ": "  + bill_costs[index] + "</li>";
+        for (let index = 0; index < needed_bills.length; index++) {
+
+            document.getElementById("needed_bills").innerHTML += "<li>" + needed_bills[index]+ ": "  + needed_costs[index] + "</li>";
             
         }
+
+        for (let index = 0; index < want_bills.length; index++) {
+
+            document.getElementById("want_bills").innerHTML += "<li>" + want_bills[index]+ ": "  + want_costs[index] + "</li>";
+
+        }
+
+        bill_costs = needed_costs.concat(want_costs)
+        console.log(bill_costs)
         
         TotalOfBills(bill_costs);
 
@@ -136,6 +159,17 @@ display_bills();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+
+    var totalneed = 1760.23;
+    var totalwant = 15 + 27.50 + 10.00;
+    var totalsavings = 2800 - 1760.21 - 15;
+
+const totals = [totalneed, totalwant, totalsavings];
+
+console.log("totals: "  + totals)
+ 
+
+// Pie Chart Example
     new Chart(document.getElementById('pie-chart'), {
       type: 'doughnut',
       data: {
@@ -143,7 +177,7 @@ display_bills();
         datasets: [{
           backgroundColor: ["#e63946", "#254BDD",
             "#ffbe0b" ],
-          data: [1760.21, 500, 225],
+          data: totals,
           
         }]
       },
@@ -152,7 +186,7 @@ display_bills();
           display: true,
           text: 'Overview of Bills'
         },
-        responsive: true,
+        responsive: false,
       }
     });
   </script>

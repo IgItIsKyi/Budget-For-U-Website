@@ -40,17 +40,11 @@
                 <h1>What budgeting model would you like to go by?</h1>
 
                 <section class="mod_opt">
-                    <input type="checkbox" id="mod_opt1" name="mod_opt1"><br>
+                    <input type="radio" id="mod_opt1" name="mod_opt1" onclick="selectOnlyThis(this.id)"><br>
                     <label for="mod_opt1">50/30/20 Budget</label><br>
-                </section>
-
-                <section class="mod_opt">
-                    <input type="checkbox" id="mod_opt2" name="mod_opt2"><br>
+                    <input type="radio" id="mod_opt2" name="mod_opt1" onclick="selectOnlyThis(this.id)"><br>
                     <label for="mod_opt2">Zero Based Budget</label><br>
-                </section>
-
-                <section class="mod_opt">
-                    <input type="checkbox" id="mod_opt3" name="mod_opt3"><br>
+                    <input type="radio" id="mod_opt3" name="mod_opt1" onclick="selectOnlyThis(this.id)"><br>
                     <label for="mod_opt3">Pay You First Budget</label><br>
                 </section>
 
@@ -62,10 +56,15 @@
         <!---  Start of Needs Form-->
             <div id="needs_info" hidden>
             <div id="bill_lines">
-                <label for="bill">Bill 1:</label> 
+                <label for="billName">Bill 1:</label> 
                 <input type="text" id="billName" name="billName">
-                <label for="bill">Bill amount:</label> 
-                <input type="int" id="billAmount" name="billAmount">                
+                <label for="billAmount">Bill amount:</label> 
+                <input type="int" id="billAmount" name="billAmount">
+                <label for="billType">Bill type:</label> 
+                <select name="billType" id="billType">
+                    <option value="Need">Need</option>
+                    <option value="Want">Want</option>
+                  </select>
             </div>
             <div id="bill_btns">
                 <button id="add-bill">+</button>
@@ -100,15 +99,15 @@
 
             need_counter++;
             // Adds the bill line
-            document.getElementById("bill_lines").innerHTML += '<br><label for="bill' + need_counter + '">Bill ' + need_counter + ':</label><input type="text" id="bill' + need_counter + ' " <label for="bill">Bill amount:</label> <input type="int" id="billAmount" name="billAmount">';
+            document.getElementById("bill_lines").innerHTML += '<br><label for="bill' + need_counter + '">Bill ' + need_counter + 
+                ':</label><input type="text" id="bill' + need_counter + ' " <label for="bill' + need_counter +'">Bill amount:</label> <input type="int" id="billAmount" name="billAmount">'
+                + '<label for="billType' + need_counter + '">Bill type:</label> <select name="billType" id="billType' + need_counter +
+                '"><option value="Need">Need</option><option value="Want">Want</option></select>';
         }
 
         document.getElementById("add-bill").addEventListener("click", addBillLine);
 
-        //What to do after submit is clicked on last section of form
-        function finishedSetUp(){
 
-        }
     </script>
 </body>
 </html>
